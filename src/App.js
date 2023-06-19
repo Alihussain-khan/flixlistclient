@@ -10,6 +10,7 @@ import Category from './Pages/Category';
 import UserMovies from './Pages/UserMovies';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import PageNotFound from './Pages/PageNotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signin' element={<Singin/>}/>
+      <Route path='/*' element={<PageNotFound/>}/>
     </Routes>
     
 
