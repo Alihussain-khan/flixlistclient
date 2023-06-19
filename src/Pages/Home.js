@@ -9,7 +9,7 @@ const Home = () => {
 
   const [movies, setMovies] = useState([])
   const api = useEffect(()=>{
-    axios.get("https://flixlistbackend-zosl.vercel.app/api/v1/auth/sendmovies").then(res=>setMovies(res.data))
+    axios.get("flixlistbackend-zosl.vercel.app/api/v1/auth/sendmovies").then(res=>setMovies(res.data))
   },[])
   
 
