@@ -31,7 +31,7 @@ const updateList = () => {
     password:""})
 
     try {
-      axios.post('flixlistbackend-zosl.vercel.app/api/v1/auth/login', {email,password})
+      axios.post('https://flixlistbackend-zosl.vercel.app/api/v1/auth/login', {email,password})
       .then(response => {
         const data = response.data.user.email;   
         localStorage.setItem('email',JSON.stringify({data})) 
