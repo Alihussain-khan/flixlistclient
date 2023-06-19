@@ -34,7 +34,7 @@ const Singin = () => {
         console.log(email)
         console.log(password)
         try {
-            axios.post('http://localhost:8000/api/v1/auth/register', {name, phone, address, email,password})
+            axios.post('https://flixlistbackend-zosl.vercel.app/api/v1/auth/register', {name, phone, address, email,password})
             .then(response => {
                 const data = response.data;
                 const message = data.message 

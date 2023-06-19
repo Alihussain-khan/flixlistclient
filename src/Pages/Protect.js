@@ -19,7 +19,7 @@ const Protect = () => {
         console.log(t)
   
   
-        axios.get('http://localhost:8000/api/v1/auth/verify', {
+        axios.get('https://flixlistbackend-zosl.vercel.app/api/v1/auth/verify', {
           headers: {'authorization': t}
         })
       .then(response => {

@@ -14,7 +14,7 @@ const Category = () => {
     useEffect(() => {
       const getProducts = async () => {
       
-        let response = await fetch("http://localhost:8000/api/v1/auth/sendmovies");      
+        let response = await fetch("https://flixlistbackend-zosl.vercel.app/api/v1/auth/sendmovies");      
         response = await response.json();
         
           setData(response?.filter( x => x.category == a.category));

@@ -21,7 +21,7 @@ useEffect(() =>
 
 async function FetchUserMovies() 
 {
-  await axios.post('http://localhost:8000/api/v1/auth/usermovies', {email})
+  await axios.post('https://flixlistbackend-zosl.vercel.app/api/v1/auth/usermovies', {email})
   .then(res => setMovies(res?.data ?? []))
   .catch(exception => console.log(`exception.response = ${JSON.stringify(exception?.response)}`))
 }

@@ -23,7 +23,7 @@ const SingleMovie = () => {
 
  async function FetchMovies()
  {
-    await axios.get('http://localhost:8000/api/v1/auth/sendmovies')
+    await axios.get('https://flixlistbackend-zosl.vercel.app/api/v1/auth/sendmovies')
     .then(response => 
     {
         console.log(JSON.stringify(response));
@@ -51,7 +51,7 @@ const add = () =>{
     const id = single._id
    
     if(email){try {
-        axios.put('http://localhost:8000/api/v1/auth/add', {id, email})
+        axios.put('https://flixlistbackend-zosl.vercel.app/api/v1/auth/add', {id, email})
         alert("added")
     } catch (error) {
         
@@ -67,7 +67,7 @@ const remove= () =>{
     const id = single._id
    
     if(email){try {
-        axios.put('http://localhost:8000/api/v1/auth/remove', {id, email})
+        axios.put('https://flixlistbackend-zosl.vercel.app/api/v1/auth/remove', {id, email})
         alert("removed")
     } catch (error) {
         
