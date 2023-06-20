@@ -33,11 +33,31 @@ const updateList = () => {
     try {
       axios.post('https://flixlistbackend-zosl.vercel.app/api/v1/auth/login', {email,password})
       .then(response => {
-        const data = response.data.user.email;   
-        localStorage.setItem('email',JSON.stringify({data})) 
-        let t = response.data.token
-        localStorage.setItem('token',JSON.stringify({t}))
-        navigate('/')  
+
+        const info = response.data;
+        const message = info.message 
+        console.log(message)   
+       
+        if(message == "password incorrect")
+        {
+          return alert("password incorrect") 
+        }
+        if(message == "email or password required")
+        {
+          return alert("email or password required") 
+        }
+        if(message == "email not found"){
+          return alert("user not found please sign up first") 
+            
+        }
+        else{  
+              const data = response.data.user.email;   
+              localStorage.setItem('email',JSON.stringify({data})) 
+              let t = response.data.token
+              localStorage.setItem('token',JSON.stringify({t}))
+              navigate('/') 
+         }
+      
       })
   } catch (error) {
       console.log(error)
