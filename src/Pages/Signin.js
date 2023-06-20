@@ -85,8 +85,10 @@ const Singin = () => {
   return (
     <>
     <Layout>
-    <div className='myform shadow container my-5 col-4 p-5 mrgin'>
-       
+    <div className='container'>
+    <div className='row'>
+        <div className='col-md-3'></div>
+        <div className='shadow col-md-6  p-5 my-5  mrgin'>
             <div className="mb-3">
                 <label  className="form-label">Name</label>
                 <input type="text" className="form-control" name="name" placeholder="Enter Name" value={inputText.name} onChange={handler}  />
@@ -111,6 +113,9 @@ const Singin = () => {
             <br/>
             <p className='mt-3'>Already signed up? <Link to="/login">Login</Link> </p>
         </div>
+        </div>
+        </div>
+
         </Layout>
     </>
   )

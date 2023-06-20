@@ -50,8 +50,10 @@ const updateList = () => {
 
   return (
     <Layout>
-     <div className='container myform shadow mt-5 col-4 p-5'>
-        
+<div className='container'>
+    <div className='row'>
+        <div className='col-md-3'></div>
+        <div className='shadow col-md-6  p-5 my-5  mrgin'>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                 <input type="email" className="form-control" name="email" placeholder="Enter Email" value={inputText.email} onChange={handler} />
@@ -65,6 +67,8 @@ const updateList = () => {
             <br/>
             <p className='mt-3'>New User?  <Link to="/signin">Sign up</Link> </p>
       </div>
+      </div>
+        </div>
     </Layout>
   )
 }
