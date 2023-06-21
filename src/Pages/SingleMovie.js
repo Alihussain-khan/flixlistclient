@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router'
 import Layout from '../components/Layout'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleMovie = () => {
 
@@ -52,7 +54,16 @@ const add = () =>{
    
     if(email){try {
         axios.put('https://flixlistbackend-zosl.vercel.app/api/v1/auth/add', {id, email})
-        alert("added")
+        toast.success('added', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     } catch (error) {
         
         console.log("axios has issues")
@@ -68,7 +79,16 @@ const remove= () =>{
    
     if(email){try {
         axios.put('https://flixlistbackend-zosl.vercel.app/api/v1/auth/remove', {id, email})
-        alert("removed")
+        toast.success('removed', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     } catch (error) {
         
         console.log("axios has issues")
@@ -93,7 +113,7 @@ const remove= () =>{
 
             </div>
         </div>
-        
+        <ToastContainer/>
   </Layout>
   
   )

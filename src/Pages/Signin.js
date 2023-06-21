@@ -7,6 +7,8 @@ import axios from "axios";
 import { useFormik } from 'formik';
 import { signUpSchema } from '../schemas/signup';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialValues = {
     name:"",
@@ -35,13 +37,41 @@ const Singin = () => {
                    
                     if(message == "user already exists")
                     {
-                       alert("user already exists") 
+                        toast.error('user already exists', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            });
                     }
                     if(message == "change phone number")
                     {
-                       alert("change phone number") 
+                        toast.error('change phone number', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            }); 
                     }
                     if(message == "user created successfully"){
+                        toast.success('Sign up Successfull', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                            });
                         navigate('/login')
                     }
                      
@@ -180,6 +210,7 @@ const Singin = () => {
         </div>
 
         </Layout>
+        <ToastContainer />
     </>
   )
 }

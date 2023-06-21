@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import { useState } from 'react'
 import { useNavigate , Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import axios from 'axios'
 const Login = () => {
 
@@ -40,14 +43,45 @@ const updateList = () => {
        
         if(message == "password incorrect")
         {
-          return alert("password incorrect") 
+
+          return toast.error('password incorrect', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+          // return alert("password incorrect") 
         }
         if(message == "email or password required")
         {
-          return alert("email or password required") 
+          return toast.error('email or password required', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+          // return alert("email or password required") 
         }
         if(message == "email not found"){
-          return alert("user not found please sign up first") 
+          return toast.error('user not found please sign up first', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+          // return alert("user not found please sign up first") 
             
         }
         else{  
@@ -55,6 +89,16 @@ const updateList = () => {
               localStorage.setItem('email',JSON.stringify({data})) 
               let t = response.data.token
               localStorage.setItem('token',JSON.stringify({t}))
+              toast.success('Sign up Successfull', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
               navigate('/') 
          }
       
@@ -69,6 +113,7 @@ const updateList = () => {
     }
 
   return (
+    <>
     <Layout>
 <div className='container'>
     <div className='row'>
@@ -90,6 +135,8 @@ const updateList = () => {
       </div>
         </div>
     </Layout>
+    <ToastContainer/>
+    </>
   )
 }
 
