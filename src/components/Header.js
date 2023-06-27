@@ -36,7 +36,7 @@ const Header = () => {
   
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container container-fluid">
-  <Link className="navbar-brand" to="/">FlixList</Link>
+  <Link className="navbar-brand text-danger " to="/">FlixList</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
     </button>
@@ -60,16 +60,16 @@ const Header = () => {
   </ul>
 </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link className="nav-link" to="/about">About</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/contact">Contact</Link>
-        </li>
+        </li> */}
         <li className="nav-item">
-          <Link className="nav-link" to="/usermovies">My Movies</Link>
+          <Link className="nav-link " to="/usermovies">My Movies</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item mx-auto">
           <Link className="nav-link" to={'/login'} onClick={()=>localStorage.clear()}>Logout</Link>
         </li>
       </ul>

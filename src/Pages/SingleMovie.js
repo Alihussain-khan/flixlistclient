@@ -100,8 +100,8 @@ const remove= () =>{
         
         <div className='container'>
             <div className='row mt-5'>
-                <div className='col-4 d-flex justify-content-center' ><img className='img'  src={`.${single?.image}`}/> </div>
-                <div className='col-6 px-5 py-3 text-dark   '>
+                <div className='col-lg-4 col-md-6 d-flex justify-content-center' ><img className='single_img'  src={`.${single?.image}`}/> </div>
+                <div className='col-lg-8 col-md-6 px-5 py-3 text-dark   '>
                     <h3 className='text-danger'>{single?.title}</h3>
                     <h5><span className='text-warning'>IMDb Rating: </span> {single?.imbd}</h5>
                     <p className='fs-6'>{single?.description}</p>

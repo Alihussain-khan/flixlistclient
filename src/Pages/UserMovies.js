@@ -47,7 +47,7 @@ async function FetchUserMovies()
 )
 
             
-            })):<h1 className='text-center'>No Movies Added</h1>}</div>
+            })):<h1 className='text-center py-5'>No Movies Added, Please go to <br/><Link className='btn btn-outline-secondary' to="/">Home</Link></h1>}</div>
             </div>
     </Layout>
   )

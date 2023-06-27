@@ -49,8 +49,8 @@ const Category = () => {
   <div className='row mt-5'>
           {data?.map(x=>{
              return(
-              <div className='col-lg-3 col-md-4 col-sm-10 mb-3'>
-                  <div className="card" style={{width: '15rem'}}>
+              <div className='col-lg-3 col-md-4 col-sm-6 col-12 mb-3'>
+                  <div className="card" style={{}}>
                   <Link to={`/single/${x.id}`}><img src={`.${x.image}`} class="card-img-top"></img></Link>
                   
                   </div>
