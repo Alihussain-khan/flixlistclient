@@ -69,7 +69,7 @@ const Header = () => {
         <li className="nav-item">
           <Link className="nav-link " to="/usermovies">My Movies</Link>
         </li>
-        <li className="nav-item mx-auto">
+        <li className="nav-item">
           <Link className="nav-link" to={'/login'} onClick={()=>localStorage.clear()}>Logout</Link>
         </li>
       </ul>
