@@ -40,3 +40,20 @@ code {
   margin-bottom: 30px;
   border-radius: 20px;
 }
+
+
+.mypage-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.my-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.myfooter {
+ 
+  bottom: 0;
+  width: 100%;
+            /* Footer height */
+}

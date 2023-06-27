@@ -7,7 +7,11 @@ const Layout = (props) => {
    
         <Header/>
         <main className='' style={{}}>
+          <div className='mypage-container'>
+            <div className='my-wrap'>
                   {props.children}
+            </div>
+          </div>
         </main>
     
        
