@@ -11,6 +11,7 @@ const SingleMovie = () => {
 
     const [movies, setMovies] = useState([])
     const [single, setSingle] = useState([])
+    const [addButton, setAddButton] = useState("")
     let a = useParams()
     const api = useEffect(()=>{
         FetchMovies();
@@ -28,6 +29,7 @@ const SingleMovie = () => {
     await axios.get('https://flixlistbackend-zosl.vercel.app/api/v1/auth/sendmovies')
     .then(response => 
     {
+        
         console.log(JSON.stringify(response));
 
         if (response?.data)
@@ -54,16 +56,39 @@ const add = () =>{
    
     if(email){try {
         axios.put('https://flixlistbackend-zosl.vercel.app/api/v1/auth/add', {id, email})
-        toast.success('added', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            });
+        .then(response =>{
+            const info = response.data;
+            const message = info.message 
+            console.log(message)  
+            if(message=="Movie Already exists")
+            {
+                toast.error('movie already exists', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            }
+            if(message=="Movie added")
+            {
+                toast.success('added', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            }
+
+        })
+       
     } catch (error) {
         
         console.log("axios has issues")
